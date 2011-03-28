@@ -9,28 +9,8 @@ public class Ripiano {
 	private String idRipiano;
 	private ArrayList<Oggetto> listaOggetti;
 
-	public final ArrayList<Oggetto> getListaOggetti() {
-		return listaOggetti;
-	}
-
-	public final void setListaOggetti(ArrayList<Oggetto> listaOggetti) {
-		this.listaOggetti = listaOggetti;
-	}
-
 	public Ripiano(String idRipiano) {
 		super();
-		this.idRipiano = idRipiano;
-	}
-
-	public final String getIdRipiano() {
-		return idRipiano;
-	}
-
-	public void riordinaRipiano() {
-		Collections.sort(listaOggetti);
-	}
-
-	public final void setIdRipiano(String idRipiano) {
 		this.idRipiano = idRipiano;
 	}
 
@@ -43,6 +23,10 @@ public class Ripiano {
 
 		// Colloca oggetto sul ripiano
 		listaOggetti.add(oggetto);
+		
+		//Riordino il ripiano
+		this.riordinaRipiano();
+		
 	}
 
 	public void elencaOggetti() {
@@ -56,5 +40,29 @@ public class Ripiano {
 			System.out.println("- "+element.getNome());
 		}
 		System.out.println();
+	}
+	
+	public void riordinaRipiano() {
+		/** Riordina gli oggetti contenuti nella listaOggetti alfabeticamente
+		 */
+		Collections.sort(listaOggetti);
+		System.out.println("Ripiano numero "+this.idRipiano+" riordinato!");
+	}
+
+	public final String getIdRipiano() {
+		return idRipiano;
+	}
+
+	public final ArrayList<Oggetto> getListaOggetti() {
+		return listaOggetti;
+	}
+
+
+	public final void setIdRipiano(String idRipiano) {
+		this.idRipiano = idRipiano;
+	}
+
+	public final void setListaOggetti(ArrayList<Oggetto> listaOggetti) {
+		this.listaOggetti = listaOggetti;
 	}
 }
