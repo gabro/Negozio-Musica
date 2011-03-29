@@ -1,7 +1,9 @@
 package negozio.Modelli;
 
 public abstract class Oggetto implements Comparable<Oggetto> {
-
+/**
+ * Un qualsiasi oggetto del negozio
+ */
 	private String nome;
 
 	public Oggetto(String nome) {
@@ -19,7 +21,12 @@ public abstract class Oggetto implements Comparable<Oggetto> {
 
 	@Override
 	public int compareTo(Oggetto o) {
-		return this.nome.compareTo(o.getNome()); 
+		/**
+		 * La comparazione di due oggetti avviene comparandone alfabeticamente il nome
+		 * La comparazione non è case sensitive
+		 * @param o l'oggetto da confrontare
+		 */
+		return this.nome.compareToIgnoreCase(str)(o.getNome()); 
 	}
 
 }

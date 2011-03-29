@@ -15,7 +15,11 @@ public class Ripiano {
 	}
 
 	public void collocaOggetto(Oggetto oggetto) {
-
+		/**
+		 * Colloca l'oggetto sul ripiano
+		 * @param oggetto l'oggetto da collocare
+		 */
+		
 		// Se la lista è null la inizializzo
 		if (null == listaOggetti) {
 			listaOggetti = new ArrayList<Oggetto>();
@@ -23,14 +27,16 @@ public class Ripiano {
 
 		// Colloca oggetto sul ripiano
 		listaOggetti.add(oggetto);
+		System.out.println("Oggetto "+oggetto.getNome()+" aggiunto al ripiano numero "+this.idRipiano+"!");
 		
 		//Riordino il ripiano
 		this.riordinaRipiano();
 		
 	}
 
-	public void elencaOggetti() {
-		/** Stampa a video un elenco degli oggetti presenti sullo scaffale
+	public void elencaOggetti() {		
+		/** 
+		 * Stampa a video un elenco degli oggetti presenti sullo scaffale
 		 */
 		System.out.println("Il ripiano numero " + this.idRipiano
 				+ " contiene gli oggetti: ");
@@ -43,7 +49,8 @@ public class Ripiano {
 	}
 	
 	public void riordinaRipiano() {
-		/** Riordina gli oggetti contenuti nella listaOggetti alfabeticamente
+		/** 
+		 * Riordina gli oggetti contenuti nella listaOggetti alfabeticamente
 		 */
 		Collections.sort(listaOggetti);
 		System.out.println("Ripiano numero "+this.idRipiano+" riordinato!");

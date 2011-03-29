@@ -33,6 +33,7 @@ public class Main {
 		elisa.accordaStrumento(steinway);
 		elisa.suonaStrumento(steinway, Nota.MI);
 		gabriele.accordaStrumento(besson);
+		gabriele.lucidaStrumento(steinway);
 		
 		stratocaster.montaAccessorio(tracollaBlu);
 		

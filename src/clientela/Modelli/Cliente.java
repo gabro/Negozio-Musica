@@ -1,6 +1,7 @@
 package clientela.Modelli;
 
 import negozio.Interfacce.Accordabile;
+import negozio.Interfacce.Lucidabile;
 import negozio.Modelli.Nota;
 import negozio.Modelli.Oggetto;
 import negozio.Modelli.Strumento;
@@ -49,6 +50,14 @@ public class Cliente {
 		} else { 
 			System.out.println(strumento.getNome()+" non è uno strumento accordabile perché è un/una "+strumento.getClass().getSimpleName());
 			
+		}
+	}
+	
+	public void lucidaStrumento(Strumento strumento){
+		if(strumento instanceof Lucidabile) {
+			((Lucidabile)strumento).pulisci();
+		} else {
+			System.out.println(strumento.getNome()+" non è uno strumento lucidabile perché è un/una "+strumento.getClass().getSimpleName());
 		}
 	}
 }
