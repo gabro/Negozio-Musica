@@ -1,5 +1,6 @@
 package clientela.Modelli;
 
+import eccezioni.NonLucidabileEccezione;
 import negozio.Interfacce.Accordabile;
 import negozio.Interfacce.Lucidabile;
 import negozio.Modelli.Nota;
@@ -35,29 +36,29 @@ public class Cliente {
 
 	public void acquistaOggetto(Oggetto oggetto) {
 		// Per acquistare un oggetto lo metto nello zaino
-		System.out.println(this.nome+" ha acquistato "+oggetto.getNome()+".");
+		System.out.println(this.nome + " ha acquistato " + oggetto.getNome()
+				+ ".");
 		this.zaino.inserisciOggetto(oggetto);
 	}
-	
-	public void suonaStrumento(Strumento strumento,Nota nota) {
-		System.out.println(this.nome+" suona la nota "+nota+" con lo/la "+strumento.getNome());
+
+	public void suonaStrumento(Strumento strumento, Nota nota) {
+		System.out.println(this.nome + " suona la nota " + nota + " con lo/la "
+				+ strumento.getNome());
 		strumento.emettiSuono(nota);
 	}
-	
-	public void accordaStrumento(Strumento strumento){
-		if(strumento instanceof Accordabile) {
-			((Accordabile)strumento).accorda();
-		} else { 
-			System.out.println(strumento.getNome()+" non è uno strumento accordabile perché è un/una "+strumento.getClass().getSimpleName());
-			
+
+	public void accordaStrumento(Strumento strumento) {
+		if (strumento instanceof Accordabile) {
+			((Accordabile) strumento).accorda();
+		} else {
+			System.out.println(strumento.getNome()
+					+ " non è uno strumento accordabile perché è un/una "
+					+ strumento.getClass().getSimpleName());
+
 		}
 	}
-	
-	public void lucidaStrumento(Strumento strumento){
-		if(strumento instanceof Lucidabile) {
-			((Lucidabile)strumento).pulisci();
-		} else {
-			System.out.println(strumento.getNome()+" non è uno strumento lucidabile perché è un/una "+strumento.getClass().getSimpleName());
-		}
+
+	public void lucidaStrumento(Lucidabile strumento) {
+		strumento.pulisci();
 	}
 }
