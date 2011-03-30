@@ -47,15 +47,8 @@ public class Cliente {
 		strumento.emettiSuono(nota);
 	}
 
-	public void accordaStrumento(Strumento strumento) {
-		if (strumento instanceof Accordabile) {
-			((Accordabile) strumento).accorda();
-		} else {
-			System.out.println(strumento.getNome()
-					+ " non è uno strumento accordabile perché è un/una "
-					+ strumento.getClass().getSimpleName());
-
-		}
+	public void accordaStrumento(Accordabile strumento) {
+		strumento.accorda();
 	}
 
 	public void lucidaStrumento(Lucidabile strumento) {
